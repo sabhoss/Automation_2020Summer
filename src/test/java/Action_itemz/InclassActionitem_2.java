@@ -44,7 +44,7 @@ public class InclassActionitem_2 extends Abstract_Class {
         Thread.sleep(1000);
 
         //need to scroll to the bottom of the page to capture the search result
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        //JavascriptExecutor jse = (JavascriptExecutor)driver;
         //scroll down using executeScript command
         jse.executeScript("scroll(0,-5000)");
         Thread.sleep(1000);
@@ -67,6 +67,16 @@ public class InclassActionitem_2 extends Abstract_Class {
         ReuseableMethods_Loggers.sendKeys(driver,"//*[@class='login-username']","WeweWawa69",logger,"enter Fake username");
         Thread.sleep(1000);
         ReuseableMethods_Loggers.click(driver,"//*[id='login-signin']",logger,"Sign in");
+        Thread.sleep(1000);
+        String resultz = ReuseableMethods_Loggers.captureResult(driver,"//*[@id='username-error']",logger,"Search Result");
+        logger.log(LogStatus.PASS,"My error message is  " + resultz);
+        //after all the test steps per @Test you must end the test as well
+
+
+
+
+
+
 
 
 
